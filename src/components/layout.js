@@ -6,16 +6,29 @@ import {
   layout,
   layoutHeader,
   layoutNav,
+  logo,
   layoutNavBox,
   resumeButton,
+  layoutLeft,
+  layoutRight,
+  layoutLeftItem,
+  layoutRightItem,
 } from "./layout.module.css";
+import Logo from "../images/logo.svg";
+import GitHub from "../images/github.svg";
+import Linkedln from "../images/linkedln.svg";
+import Codepen from "../images/codepen.svg";
 
 const Layout = ({ children }) => {
   return (
     <div className={layout}>
       <header className={layoutHeader}>
         <nav className={layoutNav}>
-          <div>Logo</div>
+          <div className={logo}>
+            <a href="/">
+              <Logo />
+            </a>
+          </div>
           <div className={layoutNavBox}>
             <ol>
               <li>
@@ -36,6 +49,32 @@ const Layout = ({ children }) => {
           </div>
         </nav>
       </header>
+      <div orientation="left" className={layoutLeft}>
+        <ul className={layoutLeftItem}>
+          <li>
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <GitHub />
+            </a>
+          </li>
+          <li>
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <Linkedln />
+            </a>
+          </li>
+          <li>
+            <a href="/" target="_blank" rel="noopener noreferrer">
+              <Codepen />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div orientation="right" className={layoutRight}>
+        <div className={layoutRightItem}>
+          <a href="mailto:baibhavmandal12@gmail.com">
+            baibhavmandal12@gmail.com
+          </a>
+        </div>
+      </div>
       {children}
     </div>
   );
