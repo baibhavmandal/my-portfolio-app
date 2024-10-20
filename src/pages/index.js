@@ -1,5 +1,4 @@
 import * as React from "react";
-import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import About from "../components/about";
@@ -11,23 +10,32 @@ import {
   bigHeading,
 } from "./index.module.css";
 
-const IndexPage = ({ data }) => {
+const data = {
+  value: "introduction",
+  greeting: "Hi, my name is",
+  name: "Baibhav Mandal",
+  title: "I build things for the web.",
+  description:
+    "I am Baibhav Mandal, a passionate and detail-oriented software developer with a solid foundation in backend development, especially using JavaScript (Node.js). I thrive on solving complex problems and building scalable, efficient applications. With hands-on experience in real-time communication systems, database management, and API development, I am eager to contribute to innovative projects that push the boundaries of technology.",
+};
+
+const IndexPage = () => {
   return (
     <Layout>
       <div id="content">
         <main className={`${fillHeight} ${mainContent}`}>
           <section className={mainSection}>
             <div>
-              <h1>{data.json.greeting}</h1>
+              <h1>{data.greeting}</h1>
             </div>
             <div>
-              <h2 className={bigHeading}>{data.json.name}</h2>
+              <h2 className={bigHeading}>{data.name}</h2>
             </div>
             <div>
-              <h3 className={bigHeading}>{data.json.title}</h3>
+              <h3 className={bigHeading}>{data.title}</h3>
             </div>
             <div>
-              <p>{data.json.desc}</p>
+              <p>{data.description}</p>
             </div>
           </section>
           <About />
@@ -40,15 +48,3 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 export const Head = () => <title>Baibhav Mandal</title>;
-
-export const query = graphql`
-  query {
-    json(id: { eq: "f2895b1a-c5f3-5fa2-badd-6e34bd43f041" }) {
-      name
-      title
-      value
-      desc
-      greeting
-    }
-  }
-`;

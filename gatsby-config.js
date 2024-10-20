@@ -2,6 +2,9 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
   },
@@ -17,8 +20,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `blog`,
+        name: `content`,
         path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `image`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -27,11 +37,24 @@ module.exports = {
         typeName: "Json",
       },
     },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Open Sans`,
+            file: `https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap`,
+          },
+        ],
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
   ],
-  flags: {
-    DEV_SSR: true,
-  },
 };
