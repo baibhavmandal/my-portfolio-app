@@ -2,12 +2,25 @@ import * as React from "react";
 
 import Layout from "../components/layout";
 import About from "../components/about";
+import Contact from "../components/contact";
+
+import Star from "../images/star.svg";
+import Feather from "../images/feather.svg";
+import Github from "../images/github.svg";
+import Linkedln from "../images/linkedln.svg";
+import Codepen from "../images/codepen.svg";
+import Instagram from "../images/instagram.svg";
+import Twitter from "../images/twitter.svg";
 
 import {
   fillHeight,
   mainContent,
   mainSection,
   bigHeading,
+  footer,
+  footerAuthor,
+  githubStats,
+  footerContact,
 } from "./index.module.css";
 
 const data = {
@@ -39,9 +52,66 @@ const IndexPage = () => {
             </div>
           </section>
           <About />
+          <Contact />
         </main>
+        <Footer />
       </div>
     </Layout>
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className={footer}>
+      <div className={footerContact}>
+        <ul>
+          <li>
+            <a href="https://github.com" rel="" target="__blank">
+              <Github />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com" rel="" target="__blank">
+              <Instagram />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com" rel="" target="__blank">
+              <Twitter />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com" rel="" target="__blank">
+              <Linkedln />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com" rel="" target="__blank">
+              <Codepen />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div className={footerAuthor}>
+        <a
+          href="https://www.google.com"
+          rel="noopener noreferrer"
+          target="__blank"
+        >
+          <div>Built By Baibhav Mandal</div>
+          <div className={githubStats}>
+            <span>
+              <Star />
+              <span>0</span>
+            </span>
+            <span>
+              <Feather />
+              <span>0</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </footer>
   );
 };
 

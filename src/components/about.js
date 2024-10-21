@@ -4,13 +4,13 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import {
   aboutSection,
+  numberedHeading,
   inner,
   skillsList,
   aboutImage,
   wrapper,
   img,
 } from "./about.module.css";
-import { numberedHeading } from "./layout.module.css";
 
 const data = {
   value: "about",
@@ -132,7 +132,7 @@ const AboutImage = () => {
   const image = getImage(data.file.childImageSharp.gatsbyImageData);
 
   return (
-    <div className={aboutImage}>
+    <div className={aboutImage} id="about">
       <div className={wrapper}>
         <GatsbyImage image={image} alt="me" className={img} />
       </div>
