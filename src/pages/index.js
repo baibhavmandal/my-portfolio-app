@@ -66,7 +66,7 @@ const Footer = () => {
       <div className={footerContact}>
         <ul>
           <li>
-            <a href="https://github.com" rel="" target="__blank">
+            <a href="https://github.com/baibhavmandal" rel="" target="__blank">
               <Github />
             </a>
           </li>
@@ -81,7 +81,11 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://github.com" rel="" target="__blank">
+            <a
+              href="https://www.linkedin.com/in/baibhavmandal/"
+              rel=""
+              target="__blank"
+            >
               <Linkedln />
             </a>
           </li>
