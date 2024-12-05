@@ -86,7 +86,11 @@ const LayoutLeft = () => {
     <div orientation="left" className={layoutLeft}>
       <ul className={layoutLeftItem}>
         <li>
-          <a href="/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/baibhavmandal"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GitHub />
           </a>
         </li>
@@ -101,7 +105,11 @@ const LayoutLeft = () => {
           </a>
         </li>
         <li>
-          <a href="/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/baibhavmandal/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Linkedln />
           </a>
         </li>
